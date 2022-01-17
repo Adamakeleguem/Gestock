@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74C8AB00-4320-4260-A050-E6FB4AEB9E8F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GestionDeStock</RootNamespace>
+    <AssemblyName>GestionDeStock</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\CLS_Client.cs" />
+    <Compile Include="BL\CLS_Connexion.cs" />
+    <Compile Include="Categorie.cs">
+      <DependentUpon>DbStock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>DbStock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Commande.cs">
+      <DependentUpon>DbStock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbStock.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbStock.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbStock.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbStock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbStock.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Details_Commande.cs">
+      <DependentUpon>DbStock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Essai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\Essai.Designer.cs">
+      <DependentUpon>Essai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_ajouter_modifier_client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_ajouter_modifier_client.Designer.cs">
+      <DependentUpon>FRM_ajouter_modifier_client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Connexion.Designer.cs">
+      <DependentUpon>FRM_Connexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Menu.Designer.cs">
+      <DependentUpon>FRM_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\USER_Liste_Client.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\USER_Liste_Client.Designer.cs">
+      <DependentUpon>USER_Liste_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Use_List_Produit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\Use_List_Produit.Designer.cs">
+      <DependentUpon>Use_List_Produit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produit.cs">
+      <DependentUpon>DbStock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilisateur.cs">
+      <DependentUpon>DbStock.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PL\Essai.resx">
+      <DependentUpon>Essai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_ajouter_modifier_client.resx">
+      <DependentUpon>FRM_ajouter_modifier_client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Connexion.resx">
+      <DependentUpon>FRM_Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Menu.resx">
+      <DependentUpon>FRM_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\USER_Liste_Client.resx">
+      <DependentUpon>USER_Liste_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Use_List_Produit.resx">
+      <DependentUpon>Use_List_Produit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="DbStock.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbStock.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DbStock.edmx.diagram">
+      <DependentUpon>DbStock.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DbStock.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DbStock.Context.cs</LastGenOutput>
+      <DependentUpon>DbStock.edmx</DependentUpon>
+    </Content>
+    <Content Include="DbStock.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbStock.edmx</DependentUpon>
+      <LastGenOutput>DbStock.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\icons8-bunch-of-keys-64.png" />
+    <Content Include="Images\icons8-close-window-96.png" />
+    <None Include="Images\Icon\shopping-icon.png" />
+    <None Include="Images\Icon\Categorie.png" />
+    <None Include="Images\Icon\product_32.png" />
+    <None Include="Images\Icon\shop-cart-add-icon.png" />
+    <None Include="Images\Icon\Pictures-icon.png" />
+    <Content Include="Images\reduct.png" />
+    <Content Include="Images\icons8-réduire-la-fenêtre-48.png" />
+    <Content Include="Images\icons8-réduire-la-fenêtre-96.png" />
+    <Content Include="Images\icons8-shutdown-64.png" />
+    <Content Include="Images\icons8-shutdown-96.png" />
+    <Content Include="Images\stock-photo-light-bulb-with-business-graph-111656618.jpg" />
+    <Content Include="Images\stock-vector-vector-logo-design-element-on-white-background-real-estate-key-house-home-232452016.jpg" />
+    <Content Include="Resources\icons8_menu_48px_1.png" />
+    <None Include="Resources\icons8-shutdown-642.png" />
+    <None Include="Resources\icons8-réduire-la-fenêtre-24.png" />
+    <None Include="Resources\icons8-shutdown-641.png" />
+    <None Include="Resources\icons8-shutdown-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
